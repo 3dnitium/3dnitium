@@ -353,7 +353,7 @@ $(document).ready(function () {
 
     Revealator.effects_padding = '-500';
 
-    var owl = $('.owl-carousel');
+    var owl = $('.road-map');
    
 
     owl.children().each( function( index ) {
@@ -362,13 +362,28 @@ $(document).ready(function () {
 
     owl.owlCarousel({
 	    center: true,
-	    items:4,
+	    nav:true,
+	    startPosition:4,
+	    items:8,
 	    loop:false,
 	    margin:0,
-	    nav:true
+	    responsive: {
+	    	0: {
+	    		items:1,
+	    	},
+
+	    	768: {
+	    		items:5
+	    	},
+
+	    	1024: {
+	    		items:8
+	    	}
+	    }
+	    
 	});
 
-	$(document).on('click', '.owl-item>div', function() {
+	$(document).on('click', '.owl-item > div', function() {
 	    owl.trigger('to.owl.carousel', $(this).data( 'position' ) );
 	});
 

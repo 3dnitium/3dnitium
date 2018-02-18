@@ -771,8 +771,12 @@ footer {
     transform: scale(1);
 }
 
+.owl-nav {
+    display: none!important;
+}
+
 .owl-dots {
-    display: flex;
+    display: flex!important;
     justify-content: center;
     height: 20px;
 }
@@ -789,29 +793,65 @@ footer {
     background: #ffde00;
 }
 
-.owl-nav {
-    display: none;
-}
-
-.stage-disc div {
-    position: absolute;
-    left: -50%;
-    bottom: 120px;
+.road-map .stage {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 200%;
-    height: 50px;
-    background: #ffde00;
-    opacity: 0;
-    color: #000;
-    text-align: center;
-    transition: opacity .5s;
+    width: 100%;
+    height: 100%;
+    perspective: 300px;
 }
 
-.owl-item.center .stage-disc div {
-    opacity: 1;
+.road-map .stage .stage__icon {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 50% 50% 0;
+    background: #f00;
+    transform: scale(.45) rotatez(-135deg);
+    transition: all .3s;
+    z-index: 2;
 }
+
+.road-map .stage .stage__disc {
+    position: absolute;
+    bottom: 65px;
+    left: calc(50% - 1px);
+    width: 200%;
+    height: 150px;
+    padding-left: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    opacity: .3;
+    transform: translate3d(0,50px,-300px);
+    border-left: 2px solid #ffde00;
+    transition: all .3s;
+}
+
+.road-map .stage .stage__age {
+    position: absolute;
+    top: 70px;
+    width: 100%;
+    text-align: center;
+    transform: scale(.6);
+    transition: all .3s;
+}
+
+.owl-item.center .stage .stage__disc,
+.owl-item.center .stage .stage__age {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.owl-item.center .stage .stage__icon {
+    transform: scale(1) rotatez(-135deg);
+}
+
+.owl-item.center .stage .stage__disc {
+    border-left: 2px solid #ffde00;
+}
+
 
 .carousel {
     position: relative;
@@ -822,8 +862,8 @@ footer {
 .carousel-line {
     position: absolute;
     width: 100%;
-    border-top: 10px dotted #ffde00;
-    bottom: 90px;
+    border-top: 3px solid #ffde00;
+    bottom: 93px;
 }
 
 
