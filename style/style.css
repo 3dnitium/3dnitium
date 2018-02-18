@@ -321,7 +321,8 @@ h1 {
 
 @keyframes circle-rotate {
     0% {transform: rotatez(0deg);}
-    100% {transform: rotatez(180deg);}
+    50%{transform: rotatez(180deg);}
+    100% {transform: rotatez(360deg);}
 }
 
 
